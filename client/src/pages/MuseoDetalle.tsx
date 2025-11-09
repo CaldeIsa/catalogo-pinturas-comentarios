@@ -3,6 +3,7 @@ import { Link, useParams } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Loader2, MapPin, Calendar, ExternalLink } from "lucide-react";
+import Comments from "@/components/Comments";
 
 interface Museo {
   id: string;
@@ -187,6 +188,11 @@ export default function MuseoDetalle() {
             </div>
           </div>
         )}
+
+        <Comments 
+          title="Comentarios sobre este museo"
+          description={`Comparte tus experiencias y opiniones sobre ${museo.nombre}`}
+        />
       </div>
     </div>
   );

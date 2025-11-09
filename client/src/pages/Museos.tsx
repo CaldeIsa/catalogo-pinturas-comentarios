@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 import { Loader2, MapPin } from "lucide-react";
+import Comments from "@/components/Comments";
 
 interface Museo {
   id: string;
@@ -90,6 +91,11 @@ export default function Museos() {
           ))}
         </div>
       </div>
+
+      <Comments 
+        title="Comentarios"
+        description="Comparte tu opinión sobre estos museos y sus colecciones."
+      />
     </div>
   );
 }

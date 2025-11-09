@@ -3,6 +3,7 @@ import { Link, useParams } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Loader2, User, Building2 } from "lucide-react";
+import Comments from "@/components/Comments";
 
 interface Pintura {
   id: string;
@@ -171,6 +172,11 @@ export default function PinturaDetalle() {
             </div>
           </div>
         </div>
+
+        <Comments 
+          title="Comentarios sobre esta obra"
+          description={`Comparte tus pensamientos sobre ${pintura.titulo}`}
+        />
       </div>
     </div>
   );

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 import { Loader2 } from "lucide-react";
+import Comments from "@/components/Comments";
 
 interface Artista {
   id: string;
@@ -88,6 +89,11 @@ export default function Artistas() {
           ))}
         </div>
       </div>
+
+      <Comments 
+        title="Comentarios"
+        description="Comparte tu opinión sobre estos grandes maestros del arte."
+      />
     </div>
   );
 }

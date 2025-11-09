@@ -3,6 +3,7 @@ import { Link, useParams } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Loader2 } from "lucide-react";
+import Comments from "@/components/Comments";
 
 interface Artista {
   id: string;
@@ -174,6 +175,11 @@ export default function ArtistaDetalle() {
             </div>
           </div>
         )}
+
+        <Comments 
+          title="Comentarios sobre este artista"
+          description={`Comparte tus pensamientos sobre ${artista.nombre}`}
+        />
       </div>
     </div>
   );

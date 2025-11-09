@@ -28,3 +28,16 @@
 - [x] Verificar que el sitio funciona correctamente
 - [x] Preparar archivos para entrega (sin node_modules)
 - [x] Documentar URL de despliegue (se agregará después del despliegue en Netlify)
+
+
+## Tarea 4 - Integración de Utterances
+- [x] Crear componente de Utterances
+- [x] Integrar comentarios en página de Pinturas
+- [x] Integrar comentarios en página de PinturaDetalle
+- [x] Integrar comentarios en página de Artistas
+- [x] Integrar comentarios en página de ArtistaDetalle
+- [x] Integrar comentarios en página de Museos
+- [x] Integrar comentarios en página de MuseoDetalle
+- [x] Probar funcionamiento de comentarios
+- [x] Capturar screenshots del sistema de comentarios
+- [x] Crear documento PDF con screenshots

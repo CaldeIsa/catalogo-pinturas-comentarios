@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 import { Loader2 } from "lucide-react";
+import Comments from "@/components/Comments";
 
 interface Pintura {
   id: string;
@@ -81,6 +82,11 @@ export default function Pinturas() {
           ))}
         </div>
       </div>
+
+      <Comments 
+        title="Comentarios"
+        description="Comparte tu opinión sobre estas obras maestras de la historia del arte."
+      />
     </div>
   );
 }

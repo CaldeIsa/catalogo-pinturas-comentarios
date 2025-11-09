@@ -4,34 +4,46 @@ import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
-import Home from "./pages/Home";
+import Header from "./components/Header";
+import Pinturas from "./pages/Pinturas";
+import PinturaDetalle from "./pages/PinturaDetalle";
+import Artistas from "./pages/Artistas";
+import ArtistaDetalle from "./pages/ArtistaDetalle";
+import Museos from "./pages/Museos";
+import MuseoDetalle from "./pages/MuseoDetalle";
 
 function Router() {
   return (
     <Switch>
-      <Route path={"/"} component={Home} />
-      <Route path={"/404"} component={NotFound} />
-      {/* Final fallback route */}
+      <Route path="/" component={Pinturas} />
+      <Route path="/pintura/:id" component={PinturaDetalle} />
+      <Route path="/artistas" component={Artistas} />
+      <Route path="/artista/:id" component={ArtistaDetalle} />
+      <Route path="/museos" component={Museos} />
+      <Route path="/museo/:id" component={MuseoDetalle} />
+      <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>
   );
 }
 
-// NOTE: About Theme
-// - First choose a default theme according to your design style (dark or light bg), than change color palette in index.css
-//   to keep consistent foreground/background color across components
-// - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
-
 function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider
-        defaultTheme="light"
-        // switchable
-      >
+      <ThemeProvider defaultTheme="light">
         <TooltipProvider>
           <Toaster />
-          <Router />
+          <div className="min-h-screen flex flex-col">
+            <Header />
+            <main className="flex-1">
+              <Router />
+            </main>
+            <footer className="bg-card border-t border-border py-8 mt-12">
+              <div className="container text-center text-sm text-muted-foreground">
+                <p>Catálogo de Pinturas Famosas - Proyecto Académico 2025</p>
+              </div>
+            </footer>
+          </div>
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>

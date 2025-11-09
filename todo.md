@@ -1,0 +1,30 @@
+# TODO - Catálogo de Pinturas Famosas
+
+## Estructura de Datos
+- [x] Crear directorio de datos en client/public/data
+- [x] Crear archivos JSON para 12 pinturas
+- [x] Crear archivos JSON para 6 artistas  
+- [x] Crear archivos JSON para 6 museos
+- [x] Copiar imágenes al directorio client/public/images
+
+## Desarrollo Frontend
+- [x] Diseñar estilo visual del sitio (colores, tipografía)
+- [x] Crear página principal con lista de pinturas
+- [x] Crear página de detalle de pintura
+- [x] Crear página de lista de artistas
+- [x] Crear página de detalle de artista
+- [x] Crear página de lista de museos
+- [x] Crear página de detalle de museo
+- [x] Implementar navegación entre entidades
+- [x] Añadir componente de navegación (header/nav)
+- [x] Diseño responsive para móviles
+
+## Documentación
+- [ ] Crear diagrama del modelo Entidad-Relación
+- [ ] Escribir documento PDF con modelo y explicación
+- [ ] Incluir información del proyecto en el PDF
+
+## Despliegue
+- [ ] Verificar que el sitio funciona correctamente
+- [ ] Preparar archivos para entrega (sin node_modules)
+- [ ] Documentar URL de despliegue

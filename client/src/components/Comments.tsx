@@ -28,7 +28,6 @@ export default function Comments({ title = "Comentarios", description = "" }: Co
     script.setAttribute("issue-term", "pathname");
     script.setAttribute("label", "comments");
     script.setAttribute("theme", "light");
-    script.setAttribute("loading", "lazy");
 
     containerRef.current.appendChild(script);
   }, []);
@@ -41,7 +40,7 @@ export default function Comments({ title = "Comentarios", description = "" }: Co
       )}
       <div 
         ref={containerRef}
-        className="utterances-container"
+        className="utterances-container w-full"
       />
     </div>
   );

@@ -1,0 +1,37 @@
+erDiagram
+    PINTURA ||--|| ARTISTA : "creada por"
+    PINTURA ||--|| MUSEO : "se encuentra en"
+    
+    PINTURA {
+        string id PK
+        string titulo
+        string anio
+        string tecnica
+        string descripcion
+        string dimensiones
+        string artista_id FK
+        string museo_id FK
+        string imagen
+    }
+    
+    ARTISTA {
+        string id PK
+        string nombre
+        string nacimiento
+        string fallecimiento
+        string nacionalidad
+        string movimiento
+        string biografia
+        string imagen
+    }
+    
+    MUSEO {
+        string id PK
+        string nombre
+        string ciudad
+        string pais
+        string fundacion
+        string descripcion
+        string sitio_web
+        string imagen
+    }

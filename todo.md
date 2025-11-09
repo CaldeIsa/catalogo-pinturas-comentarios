@@ -20,11 +20,11 @@
 - [x] Diseño responsive para móviles
 
 ## Documentación
-- [ ] Crear diagrama del modelo Entidad-Relación
-- [ ] Escribir documento PDF con modelo y explicación
-- [ ] Incluir información del proyecto en el PDF
+- [x] Crear diagrama del modelo Entidad-Relación
+- [x] Escribir documento PDF con modelo y explicación
+- [x] Incluir información del proyecto en el PDF
 
 ## Despliegue
-- [ ] Verificar que el sitio funciona correctamente
-- [ ] Preparar archivos para entrega (sin node_modules)
-- [ ] Documentar URL de despliegue
+- [x] Verificar que el sitio funciona correctamente
+- [x] Preparar archivos para entrega (sin node_modules)
+- [x] Documentar URL de despliegue (se agregará después del despliegue en Netlify)

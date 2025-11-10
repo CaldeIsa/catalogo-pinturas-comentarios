@@ -11,18 +11,18 @@ export default function Comments({ title = "Comentarios", description = "" }: Co
   useEffect(() => {
     if (!containerRef.current) return;
 
-    // Crear el script de Utterances
+    // Crear el script de Utterances con atributos adicionales
     const script = document.createElement("script");
     script.src = "https://utteranc.es/client.js";
     script.async = true;
-    script.defer = true;
     script.crossOrigin = "anonymous";
     
-    // Configuración de Utterances - usando Issues
+    // Configuración de Utterances
     script.setAttribute("repo", "CaldeIsa/catalogo-pinturas-comentarios");
     script.setAttribute("issue-term", "pathname");
     script.setAttribute("theme", "light");
     script.setAttribute("label", "comments");
+    script.setAttribute("loading", "lazy");
 
     // Limpiar contenido previo
     containerRef.current.innerHTML = "";
@@ -40,6 +40,7 @@ export default function Comments({ title = "Comentarios", description = "" }: Co
       <div 
         ref={containerRef}
         className="w-full"
+        style={{ minHeight: "400px" }}
       />
     </div>
   );

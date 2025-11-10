@@ -1,5 +1,12 @@
 import { useEffect, useRef } from "react";
 
+import {
+  UTTERANCES_ISSUE_TERM,
+  UTTERANCES_LABEL,
+  UTTERANCES_REPO,
+  UTTERANCES_THEME,
+} from "@/const";
+
 interface CommentsProps {
   title?: string;
   description?: string;
@@ -9,26 +16,30 @@ export default function Comments({ title = "Comentarios", description = "" }: Co
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!containerRef.current) return;
+    if (!containerRef.current || !UTTERANCES_REPO) return;
 
-    // Crear el script de Utterances con atributos adicionales
+    const container = containerRef.current;
+    container.innerHTML = "";
+
     const script = document.createElement("script");
     script.src = "https://utteranc.es/client.js";
     script.async = true;
     script.crossOrigin = "anonymous";
-    
-    // Configuración de Utterances
-    script.setAttribute("repo", "CaldeIsa/catalogo-pinturas-comentarios");
-    script.setAttribute("issue-term", "pathname");
-    script.setAttribute("theme", "light");
-    script.setAttribute("label", "comments");
+    script.setAttribute("repo", UTTERANCES_REPO);
+    script.setAttribute("issue-term", UTTERANCES_ISSUE_TERM);
+    script.setAttribute("theme", UTTERANCES_THEME);
     script.setAttribute("loading", "lazy");
 
-    // Limpiar contenido previo
-    containerRef.current.innerHTML = "";
-    
-    // Agregar el script
-    containerRef.current.appendChild(script);
+    if (UTTERANCES_LABEL) {
+      script.setAttribute("label", UTTERANCES_LABEL);
+    }
+
+    script.onerror = () => {
+      container.innerHTML =
+        "<p class=\"text-sm text-muted-foreground\">No se pudo cargar el sistema de comentarios. Verifica la configuración de Utterances.</p>";
+    };
+
+    container.appendChild(script);
   }, []);
 
   return (

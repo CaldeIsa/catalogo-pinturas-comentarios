@@ -38,6 +38,23 @@ pnpm dev
 pnpm build
 ```
 
+## Configuración de Comentarios (Utterances)
+
+El sistema de comentarios se basa en [Utterances](https://utteranc.es/). Para que funcione en producción debes:
+
+1. Contar con un repositorio público en GitHub y tener instalada la aplicación de Utterances sobre él.
+2. (Opcional) Crear la etiqueta que quieras aplicar a los issues antes de especificarla.
+3. Definir las siguientes variables de entorno (por ejemplo, en Netlify) según necesites:
+
+| Variable | Descripción | Valor por defecto |
+| --- | --- | --- |
+| `VITE_UTTERANCES_REPO` | Repositorio donde se guardarán los comentarios. | `CaldeIsa/catalogo-pinturas-comentarios` |
+| `VITE_UTTERANCES_ISSUE_TERM` | Estrategia para mapear comentarios (ej. `pathname`, `url`). | `pathname` |
+| `VITE_UTTERANCES_LABEL` | Etiqueta opcional para los issues. Debe existir previamente en el repositorio. | *(sin etiqueta)* |
+| `VITE_UTTERANCES_THEME` | Tema visual del widget (`github-light`, `github-dark`, etc.). | `github-light` |
+
+Si la etiqueta configurada no existe en el repositorio, GitHub devolverá un error `422` y los comentarios no se crearán. Deja la variable vacía si no deseas asignar etiquetas.
+
 ## Estructura del Proyecto
 
 ```

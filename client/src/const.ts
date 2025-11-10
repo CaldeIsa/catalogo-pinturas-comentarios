@@ -19,3 +19,14 @@ export const getLoginUrl = () => {
 
   return url.toString();
 };
+
+export const UTTERANCES_REPO =
+  import.meta.env.VITE_UTTERANCES_REPO || "CaldeIsa/catalogo-pinturas-comentarios";
+
+export const UTTERANCES_ISSUE_TERM =
+  import.meta.env.VITE_UTTERANCES_ISSUE_TERM || "pathname";
+
+export const UTTERANCES_LABEL = import.meta.env.VITE_UTTERANCES_LABEL?.trim() || undefined;
+
+export const UTTERANCES_THEME =
+  import.meta.env.VITE_UTTERANCES_THEME || "github-light";
